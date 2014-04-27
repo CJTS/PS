@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "interface.h"
 
 void iniciar(){
@@ -48,10 +46,11 @@ int escolhe(){
 }
 
 void telaDeJogo(){
-	printf("-------Comecou o jogo!-------\n");
+	comecajogo();
 }
 
 void telaDeRank(){
+
 }
 void telaDeInstrucoes(){
 

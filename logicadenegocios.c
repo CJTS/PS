@@ -1,20 +1,4 @@
-#include <stdio.h>
-#include <string.h>
-
-typedef struct bloco{
-    char palavra[20], dificuldade;
-    char dica1[20], dica2[20], dica3[20];
-} Bloco;
-
-/*=================================================================================*/
-
-int verificaPalavra(char*, char*);
-int contabilizaPalavra1 (int);
-int contabilizaPalavra2 (int);
-char* retornapalavra (Bloco);
-char* retornadica (Bloco, int);
-
-/*=================================================================================*/
+#include "logicaDeNegocios.h"
 
 /*retorna 0 caso a palavra que o usuario digitou seja a resposta e 1 caso contrário*/
 /*recebe a palavra que o usuario digitou e a palavra que ele tem que acertar*/
@@ -75,8 +59,4 @@ char* retornadica (Bloco p, int dica){
         return q2;
     else
         return q3;
-}
-
-int main(){
-    return 0;
 }
