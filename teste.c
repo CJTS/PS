@@ -13,15 +13,57 @@
 void adicionar_testes_smo_datas(void);
 
 /*Abaixo estão as funções que efetuam os testes para a função ConstroiMalha*/
-void teste_DT_VerificaPalavra(void);
+void teste_DT_VerificaPalavra_Igual(void);
+void teste_DT_VerificaPalavra_Diferente(void);
+void teste_DT_VerificaPalavra_CaseSensitive(void);
+void teste_DT_contabilizaPalavra1_1(void);
+void teste_DT_contabilizaPalavra1_2(void);
+void teste_DT_contabilizaPalavra1_3(void);
 
 /* Teste com o arquivo nulo nula */
-void teste_DT_VerificaPalavra(void){
+void teste_DT_VerificaPalavra_Igual(void){
 	char p[] = "Torta";
 	char p1[] = "Torta";
 	int resultado = verificaPalavra(p,p1);
 	CU_ASSERT_TRUE(!resultado);
 }
+
+void teste_DT_VerificaPalavra_Diferente(void){
+	char p[] = "Torta";
+	char p1[] = "Tort";
+	int resultado = verificaPalavra(p,p1);
+	CU_ASSERT_TRUE(resultado);
+}
+
+void teste_DT_VerificaPalavra_CaseSensitive(void){
+	char p[] = "torta";
+	char p1[] = "TORTA";
+	int resultado = verificaPalavra(p,p1);
+	CU_ASSERT_TRUE(!resultado);
+}
+
+void teste_DT_contabilizaPalavra1_1(void){
+	int valor = 1;
+	int pont = contabilizaPalavra1(valor);
+
+	CU_ASSERT(pont == 2);
+}
+
+void teste_DT_contabilizaPalavra1_2(void){
+	int valor = 2;
+	int pont = contabilizaPalavra1(valor);
+
+	CU_ASSERT(pont == 1);
+}
+
+void teste_DT_contabilizaPalavra1_3(void){
+	int valor = 3;
+	int pont = contabilizaPalavra1(valor);
+
+	CU_ASSERT(pont == 0);
+}
+
+
 
 void  adicionar_testes_smo_datas(void){
 	CU_pSuite suite;
@@ -31,7 +73,12 @@ void  adicionar_testes_smo_datas(void){
 	
 	
 	/*Adiciona os testes para a função DT_data_valida*/
-	CU_ADD_TEST(suite, teste_DT_VerificaPalavra);
+	CU_ADD_TEST(suite, teste_DT_VerificaPalavra_Igual);
+	CU_ADD_TEST(suite, teste_DT_VerificaPalavra_Diferente);
+	CU_ADD_TEST(suite, teste_DT_VerificaPalavra_CaseSensitive);
+	CU_ADD_TEST(suite, teste_DT_contabilizaPalavra1_1);
+	CU_ADD_TEST(suite, teste_DT_contabilizaPalavra1_2);
+	CU_ADD_TEST(suite, teste_DT_contabilizaPalavra1_3);
 
 }
 

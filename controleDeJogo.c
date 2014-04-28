@@ -62,7 +62,7 @@ int vezJogador1(Bloco palavra){
 		printf("Seu chute:\n>> ");
 		scanf("%s",chute);
 	
-		if(verificaPalavra(strupr(chute),retornapalavra(palavra)) == 0){
+		if(verificaPalavra(chute,retornapalavra(palavra)) == 0){
 			printf("Você acertou parebens!!!\n");
 			return contabilizaPalavra1(dica);
 		}
@@ -84,7 +84,7 @@ int vezJogador2(Bloco palavra){
 		printf("Seu chute:\n>> ");
 		scanf("%s",chute);
 	
-		if(verificaPalavra(strupr(chute),retornapalavra(palavra)) == 0){
+		if(verificaPalavra(chute,retornapalavra(palavra)) == 0){
 			printf("Você acertou parebens!!!\n");
 			return contabilizaPalavra1(dica);
 		}
@@ -114,7 +114,7 @@ void fase2(int pontuacaoAntiga){
 			printf("Seu chute:\n>> ");
 			scanf("%s",chute);
 		
-			if(verificaPalavra(strupr(chute),retornapalavra(palavra)) == 0){
+			if(verificaPalavra(chute,retornapalavra(palavra)) == 0){
 				pontuacao += contabilizaPalavra2(etapa);
 				printf("Você acertou parebens!!!\n");
 				break;

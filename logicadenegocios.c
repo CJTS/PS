@@ -4,7 +4,7 @@
 /*recebe a palavra que o usuario digitou e a palavra que ele tem que acertar*/
 int verificaPalavra (char* palavra, char* atual){
 
-    if(strcmp(palavra, atual)==0)
+    if(strcmp(strupr(palavra), strupr(atual))==0)
         return 0;
     else
         return 1;
