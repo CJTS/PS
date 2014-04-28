@@ -1,37 +1,34 @@
-#include "controleDeJogo.h"
+#include "interface_controleDeJogo.h"
 
 void comecajogo(){
+
+	Bloco* lista = constroibloco(lista);
 	int pontuacao;
+
 	printf("-------Comecou o jogo!-------\n\n\n");
-    pontuacao = fase1();
-    fase2(pontuacao);
+    pontuacao = fase1(lista);
+    fase2(pontuacao,lista);
+    free(lista);
 }
 
-int fase1(){
+int fase1(Bloco * lista){
 
-	Bloco palavra1,palavra2;
 	int pontuacao1 = 0,pontuacao2 = 0,vaux;
-
-	strcpy(palavra1.palavra, "DRACULA\0");
-	strcpy(palavra1.dica1, "Transilvania\0");
-	strcpy(palavra1.dica2, "Vampiro\0");
-	strcpy(palavra1.dica3, "Mestre\0");
-
-	strcpy(palavra2.palavra, "ASTECA\0");
-	strcpy(palavra2.dica1, "Civilizacao\0");
-	strcpy(palavra2.dica2, "America\0");
-	strcpy(palavra2.dica3, "Mexico\0");
+	Bloco p1;
+	Bloco p2;
 	
 	printf("------------Fase 1-----------\n\n");
 
 	for(vaux = 0; vaux < 3; vaux++){
+		p1 = palavra_aleatoria(lista);
+		pontuacao1 += vezJogador1(p1);
 
-		pontuacao1 += vezJogador1(palavra1);
-		pontuacao2 += vezJogador2(palavra2);
+		p2 = palavra_aleatoria(lista);
+		pontuacao2 += vezJogador2(p2);
 
 		if(vaux == 2){
 			if(pontuacao1 == pontuacao2){
-				printf("Empate, rodada extra.\n" );
+				printf("\nEmpate, rodada extra.\n" );
 				vaux = 1;
 			}
 		}
@@ -57,7 +54,7 @@ int vezJogador1(Bloco palavra){
 	printf("-----------Jogador 1---------\n\n");
 
 	for(dica = 1; dica < 4; dica++){
-	
+
 		printf("Sua dica %d eh: %s\n",dica,retornadica(palavra,dica));
 		printf("Seu chute:\n>> ");
 		scanf("%s",chute);
@@ -94,19 +91,16 @@ int vezJogador2(Bloco palavra){
 	return 0;
 }
 
-void fase2(int pontuacaoAntiga){
+void fase2(int pontuacaoAntiga, Bloco * lista){
 	
-	Bloco palavra;
 	int pontuacao = 0, etapa, dica;
 	char opcao,chute[20];
 
 	printf("------------Fase 2-----------\n\n");
 	for(etapa = 1; etapa <= 8; etapa++){
 		printf("Etapa %d :\n\n",etapa );
-		strcpy(palavra.palavra, "DRACULA\0");
-		strcpy(palavra.dica1, "Transilvania\0");
-		strcpy(palavra.dica2, "Vampiro\0");
-		strcpy(palavra.dica3, "Mestre\0");
+
+		Bloco palavra = palavra_fase_2(lista,etapa);
 
 		for(dica = 1; dica <= 3; dica++){
 	

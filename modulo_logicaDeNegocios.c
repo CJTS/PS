@@ -1,4 +1,4 @@
-#include "logicaDeNegocios.h"
+#include "interface_logicaDeNegocios.h"
 
 /*retorna 0 caso a palavra que o usuario digitou seja a resposta e 1 caso contrário*/
 /*recebe a palavra que o usuario digitou e a palavra que ele tem que acertar*/

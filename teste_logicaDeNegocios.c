@@ -5,7 +5,7 @@
 
 #include "CUnit/CUnit.h"
 #include "CUnit/Basic.h" 
-#include "logicaDeNegocios.c"
+#include "modulo_logicaDeNegocios.c"
 /*
  * Função que adiciona ao registro do CUnit os testes paras as funções 
  * presentes no arquivo testes.c
