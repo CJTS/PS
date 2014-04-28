@@ -1,0 +1,3 @@
+24/04/2014 | 19:27-20:42 | Revisão funções | reviu as funções
+24/04/2014 | 21:08 - 21:31 | Revisão funções | reviu as funções
+27/04/2014 | 11h | Projetar | Criando módulo de persistencia, além de ajudar com os outros módulos

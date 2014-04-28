@@ -1,0 +1,3 @@
+21/04/2014 | 1h30 | Especificar as funçoes | Defini todas as funçoes e o que cada uma fará
+23/04/2014 | 1h | BD | Começou a estrutura o arquivo das palavras
+25/04/2014 | 2h | BD | terminou de fazer o arquivo das palavras

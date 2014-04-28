@@ -1,0 +1,4 @@
+Para compilar o programa deve-se digitar make no prompt de comando.
+Para executar o jogo deve-se digitar ./megasenha no prompt.
+Para realisar os testes do modulo de persistencia deve-se digitar make teste_persistencia.
+Para realisar os testes do modulo de logica de negocia deve-se digitar make teste_logicaDeNegocios.
