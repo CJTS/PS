@@ -17,26 +17,24 @@ int contabilizaPalavra1 (int dicas){
 }
 
 /*retorna a pontuação da pessoa para a fase 2*/
-/*recebe o número da etapa o qual ele perdeu o jogo. Caso ele ganhe o jogo,
+/*recebe o número da etapa o qual ele saiu do jogo. Caso ele ganhe o jogo,
 recebe-se outro número qualquer (aconselha-se usar o 9)*/
 int contabilizaPalavra2 (int etapa){
     if(etapa == 1)
-        return 0;
-    else if(etapa == 2)
         return 10;
-    else if(etapa == 3)
+    else if(etapa == 2)
         return 100;
-    else if(etapa == 4)
+    else if(etapa == 3)
         return 500;
-    else if(etapa == 5)
+    else if(etapa == 4)
         return 1000;
-    else if(etapa == 6)
+    else if(etapa == 5)
         return 5000;
-    else if(etapa == 7)
+    else if(etapa == 6)
         return 10000;
-    else if(etapa == 8)
+    else if(etapa == 7)
         return 500000;
-    else
+    else if(etapa == 8)
         return 1000000;
 }
 

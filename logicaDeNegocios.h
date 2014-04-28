@@ -15,5 +15,7 @@ int contabilizaPalavra1 (int);
 int contabilizaPalavra2 (int);
 char* retornapalavra (Bloco);
 char* retornadica (Bloco, int);
+void preenchebloco_caminho (Bloco*);
+
 
 #endif

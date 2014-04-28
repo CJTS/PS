@@ -1,7 +1,11 @@
-all: megasenha limpa
+all:  megasenha test limpa
+
+test: logicaDeNegocios.c teste.c
+	gcc -I./CUnit -L./CUnit teste.c -lcunit -o teste
+	./teste
 
 megasenha: main.o interface.o controleDeJogo.o logicaDeNegocios.o
-	gcc main.o interface.o controleDeJogo.o logicaDeNegocios.o -o megasenha.exe
+	gcc main.o interface.o controleDeJogo.o logicaDeNegocios.o -o megasenha
 	./megasenha.exe
 
 main.o: main.c interface.c interface.h

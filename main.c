@@ -3,7 +3,6 @@
 #include "interface.h"
 
 int main(){
-	
 	iniciar();
 
 	getchar();
