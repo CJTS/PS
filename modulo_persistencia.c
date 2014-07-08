@@ -105,7 +105,7 @@ void exclui_palavra(Bloco *lista, char *palavra){
 			n--; //Diminui em 1 o valor de n, que representa quantidade de palavras
 			lista[i] = lista[n]; // Substitui o bloco removido pelo último bloco da lista
 			fclose(fp); //Fecha o arquivo no modo leitura 
-			fopen("Palavras.txt","w"); //Elimina o conteúdo do arquivo e começa a reescritura
+			fp = fopen("Palavras.txt","w"); //Elimina o conteúdo do arquivo e começa a reescritura
 			fprintf(fp, "%d\n", n);//Insere quantidade de palavras do arquivo
 			//Loop de escritura da: palavra/dificuldade/dica1/dica2/dica3 
 			for(i=0;i<n;i++){
