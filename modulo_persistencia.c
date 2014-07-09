@@ -93,17 +93,18 @@ void adiciona_palavra(Bloco *lista, Bloco palavra){
 void exclui_palavra(Bloco *lista, char *palavra){
 	FILE *fp;
 	int i, n, f = 0;
+	int result;
 
 	fp = fopen("Palavras.txt", "r"); //Abre o arquivo de palavras
 	fscanf(fp,"%d",&n); //Lê a quantidade de palavras do arquivo/lista
 
 	//O for abaixo compara 'palavra' as palavras da lista e encerra o for caso encontre uma igual, mantendo assim o índice i
 	for(i=0;i<n;i++){
-		int resut = verificaPalavra((lista+i)->palavra,palavra);
+		result = verificaPalavra((lista+i)->palavra,palavra);
 
-		if(resut == 0){
-			n--; //Diminui em 1 o valor de n, que representa quantidade de palavras
+		if(result == 0){
 			lista[i] = lista[n]; // Substitui o bloco removido pelo último bloco da lista
+			n--; //Diminui em 1 o valor de n, que representa quantidade de palavras
 			fclose(fp); //Fecha o arquivo no modo leitura 
 			fp = fopen("Palavras.txt","w"); //Elimina o conteúdo do arquivo e começa a reescritura
 			fprintf(fp, "%d\n", n);//Insere quantidade de palavras do arquivo

@@ -55,7 +55,8 @@ void telaDeJogo(){
 }
 
 void telaDeRank(){
-	char c,opcao;
+	char c;
+	int opcao;
 	printf("Nome Pontuacao\n");
 	FILE* fp = fopen("rank.txt","r");
 	 while((c = fgetc(fp)) != EOF){
