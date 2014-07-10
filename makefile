@@ -1,6 +1,6 @@
 all:  megasenha limpa
 
-teste_logicaDeNegocios: logicaDeNegocios.c teste_logicaDeNegocios.c
+teste_logicaDeNegocios: modulo_logicaDeNegocios.c teste_logicaDeNegocios.c
 	gcc -I./CUnit -L./CUnit teste_logicaDeNegocios.c -lcunit -o teste
 	./teste
 

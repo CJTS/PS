@@ -1,0 +1,10 @@
+﻿Data	Horas Trabalhadas	Tipo de Tarefa										Descrição da Tarefa 
+ 													
+03/07	2h			- estudar aulas e laboratórios relacionados.						Revisar a lógica dos laboratórios para procurar aplicar na implementação do trabalho. 					
+05/07	1h30			- especificar módulos.									Tratar sobre os módulos que deveriam ser criados com o grupo.	
+06/07	3h			- estudar										Estudar sobre a implementação de threads.
+08/07	1h			- realizar os testes.									Realização de alguns testes manuais. 	
+08/07	3h			- revisar os testes especificados.							Revisar alguns testes feitos para a primeira entrega.
+09/07	2h			- codificar módulo									Implementação do cronômetro.
+09/07	2h			- codificar módulo									Implementação da thread.
+09/07	1h30			- diagnosticar e corrigir os problemas encontrados.					Procurar arrumar bugs referentes a primeira entrega.

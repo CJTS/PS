@@ -4,7 +4,6 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <ctype.h>
 
 typedef struct bloco{
     char palavra[20], dificuldade;

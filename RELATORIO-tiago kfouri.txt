@@ -1,3 +1,4 @@
 16/04/2014 | 1h30 | Especificar os módulos | Defini todos os módulos e o que cada um fará
 24/04/2014 | 32min | Especificar módulos | Inclui o módulo main, além de dividir quem fará cada módulo
 27/04/2014 | 11h | Projetar | Criando módulo de lógica de negócio, além de ajudar com os outros módulos
+09/07/2014 | 4h | Desenvolver | NCURSES

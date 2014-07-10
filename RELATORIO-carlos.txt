@@ -1,1 +1,1 @@
-27/04/2014 | 11h | Modulos | Criando e desendolendo os módulos de controle de jogo, interface e teste. Revisao dos modulos.
+27/04/2014 | 11h | Modulos | Criando e desendolendo os módulos de controle de jogo, interface e teste. Revisao dos modulos.09/07/2014 | 8h | Modulos | Banco de palavras, Timer, NCURSES
