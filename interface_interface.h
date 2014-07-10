@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ncurses.h>
+#include <curses.h>
 #include "interface_persistencia.h"
 
 void iniciar();

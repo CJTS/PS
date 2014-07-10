@@ -9,7 +9,7 @@ teste_persistencia: persistencia.c teste_persistencia.c
 	./teste_perci
 
 megasenha: main.o modulo_interface.o modulo_controleDeJogo.o modulo_logicaDeNegocios.o modulo_persistencia.o
-	gcc main.o modulo_interface.o modulo_controleDeJogo.o modulo_logicaDeNegocios.o modulo_persistencia.o -o megasenha -lncurses -lpthread
+	gcc main.o modulo_interface.o modulo_controleDeJogo.o modulo_logicaDeNegocios.o modulo_persistencia.o -o megasenha -lncurses -lcurses -lpthread
 
 main.o: main.c
 	gcc -c main.c
