@@ -5,21 +5,27 @@ Bloco* constroibloco(Bloco *lista){
 	int n,i;
 
 	fp = fopen("Palavras.txt", "r");
-
 	fscanf (fp, "%d", &n);
 
-	lista = (Bloco *) malloc(sizeof(n*sizeof(Bloco)));
+
+	lista = (Bloco *) malloc(n*sizeof(Bloco));
 	fseek(fp,1,1);
 
-	for(i=0;i<n;i++){
+	for(i = 0; i < n; i++){
 		fscanf(fp,"%s",(lista+i)->palavra);
-		fseek(fp,1,1);
-		fscanf(fp,"%c",&((lista+i)->dificuldade));
-		fseek(fp,1,1);
-		fscanf(fp,"%s", (lista+i)->dica1);
-		fscanf(fp,"%s", (lista+i)->dica2);
-		fscanf(fp,"%s", (lista+i)->dica3);
-		fseek(fp,1,1);
+	 	fseek(fp,1,1);
+
+	 	fscanf(fp,"%c",&((lista+i)->dificuldade));
+	 	fseek(fp,1,1);
+
+	 	fscanf(fp,"%s", (lista+i)->dica1);
+	 	fseek(fp,1,1);
+
+	 	fscanf(fp,"%s", (lista+i)->dica2);
+	 	fseek(fp,1,1);
+
+	 	fscanf(fp,"%s", (lista+i)->dica3);
+	 	fseek(fp,1,1);
 	}
 	fclose(fp);
 
@@ -90,9 +96,9 @@ void adiciona_palavra(Bloco *lista, Bloco palavra){
 	return;
 }
 
-void exclui_palavra(Bloco *lista, char *palavra){
+int exclui_palavra(Bloco *lista, char *palavra){
 	FILE *fp;
-	int i, n, f = 0;
+	int i, n, f = 0,j;
 	int result;
 
 	fp = fopen("Palavras.txt", "r"); //Abre o arquivo de palavras
@@ -103,24 +109,24 @@ void exclui_palavra(Bloco *lista, char *palavra){
 		result = verificaPalavra((lista+i)->palavra,palavra);
 
 		if(result == 0){
-			lista[i] = lista[n]; // Substitui o bloco removido pelo último bloco da lista
+			lista[i] = lista[n-2]; // Substitui o bloco removido pelo último bloco da lista
 			n--; //Diminui em 1 o valor de n, que representa quantidade de palavras
 			fclose(fp); //Fecha o arquivo no modo leitura 
-			fp = fopen("Palavras.txt","w"); //Elimina o conteúdo do arquivo e começa a reescritura
+			fp = fopen("Palavras.txt","w+"); //Elimina o conteúdo do arquivo e começa a reescritura
 			fprintf(fp, "%d\n", n);//Insere quantidade de palavras do arquivo
 			//Loop de escritura da: palavra/dificuldade/dica1/dica2/dica3 
-			for(i=0;i<n;i++){
-				fprintf(fp, "%s %c %s %s %s\n", (lista+i)->palavra, (lista+i)->dificuldade, (lista+i)->dica1, (lista+i)->dica2, (lista+i)->dica3 );	
+			for(j = 0; j < n; j++){
+				printw("\n%d\n",j);
+				fprintf(fp, "%s %c %s %s %s\n", (lista+j)->palavra, (lista+j)->dificuldade, (lista+j)->dica1, (lista+j)->dica2, (lista+j)->dica3);
+				printw("%s %c %s %s %s\n", (lista+j)->palavra, (lista+j)->dificuldade, (lista+j)->dica1, (lista+j)->dica2, (lista+j)->dica3 );
+				getch();
 			}
-			printf("Palavra removida com sucesso!\n");
-			return;
+			return 1;
 		}
 		
 	}
 
-	//Avisa o usuário que não houve exclusão do arquivo devido a inexistência da palavra
-	printf("Palavra nao encontrada. Exclusao invalida.\n");
-
 	//Fecha o arquivo fp
 	fclose(fp);
+	return 0;
 }

@@ -1,11 +1,17 @@
+#ifndef MOD_INTER
+
+#define MOD_INTER
+
 #include <stdio.h>
 #include <stdlib.h>
-#include "interface_controleDeJogo.h"
+#include <ncurses.h>
 #include "interface_persistencia.h"
 
 void iniciar();
 void telaDeJogo();
-int escolhe();
+char escolhe();
 void telaDeRank();
 void telaDeInstrucoes();
 void telaDeBD();
+
+#endif

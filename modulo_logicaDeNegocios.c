@@ -3,8 +3,10 @@
 /*retorna 0 caso a palavra que o usuario digitou seja a resposta e 1 caso contrário*/
 /*recebe a palavra que o usuario digitou e a palavra que ele tem que acertar*/
 int verificaPalavra (char* palavra, char* atual){
-
-    if(strcmp(strupr(palavra), strupr(atual))==0)
+    strupr(palavra);
+    strupr(atual);
+    
+    if(strcmp(palavra, atual)==0)
         return 0;
     else
         return 1;
@@ -57,4 +59,11 @@ char* retornadica (Bloco p, int dica){
         return q2;
     else
         return q3;
+}
+
+void strupr(char *p) {
+    while(*p != '\0') { 
+        *p = toupper(*p);
+        p++;
+    } 
 }
